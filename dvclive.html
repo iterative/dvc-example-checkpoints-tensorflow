@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DVC Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+</head>
+<body>
+    <table>
+<thead>
+<tr><th>dvclive.json                                                                                                                                </th></tr>
+</thead>
+<tbody>
+<tr><td>{&#x27;data&#x27;: {&#x27;step&#x27;: 2, &#x27;loss&#x27;: 0.31043750047683716, &#x27;acc&#x27;: 0.8873833417892456, &#x27;val_loss&#x27;: 0.2959757447242737, &#x27;val_acc&#x27;: 0.8921999931335449}}</td></tr>
+</tbody>
+</table>
+<br>
+<div id = "plot0"></div>
+<script type = "text/javascript">
+    var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "loss": "0.4902600347995758",
+        "rev": "workspace",
+        "step": "0",
+        "timestamp": "1630600131952"
+    },
+    {
+        "loss": "0.34965160489082336",
+        "rev": "workspace",
+        "step": "1",
+        "timestamp": "1630600158282"
+    },
+    {
+        "loss": "0.31043750047683716",
+        "rev": "workspace",
+        "step": "2",
+        "timestamp": "1630600185321"
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "mark": {
+        "type": "line"
+    },
+    "encoding": {
+        "x": {
+            "field": "step",
+            "type": "quantitative",
+            "title": "step"
+        },
+        "y": {
+            "field": "loss",
+            "type": "quantitative",
+            "title": "loss",
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "field": "rev",
+            "type": "nominal"
+        }
+    }
+}
+;
+    vegaEmbed('#plot0', spec);
+</script>
+<div id = "plot1"></div>
+<script type = "text/javascript">
+    var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "acc": "0.8253166675567627",
+        "rev": "workspace",
+        "step": "0",
+        "timestamp": "1630600131952"
+    },
+    {
+        "acc": "0.8745333552360535",
+        "rev": "workspace",
+        "step": "1",
+        "timestamp": "1630600158282"
+    },
+    {
+        "acc": "0.8873833417892456",
+        "rev": "workspace",
+        "step": "2",
+        "timestamp": "1630600185321"
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "mark": {
+        "type": "line"
+    },
+    "encoding": {
+        "x": {
+            "field": "step",
+            "type": "quantitative",
+            "title": "step"
+        },
+        "y": {
+            "field": "acc",
+            "type": "quantitative",
+            "title": "acc",
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "field": "rev",
+            "type": "nominal"
+        }
+    }
+}
+;
+    vegaEmbed('#plot1', spec);
+</script>
+<div id = "plot2"></div>
+<script type = "text/javascript">
+    var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "rev": "workspace",
+        "step": "0",
+        "timestamp": "1630600131953",
+        "val_acc": "0.8644999861717224"
+    },
+    {
+        "rev": "workspace",
+        "step": "1",
+        "timestamp": "1630600158283",
+        "val_acc": "0.8863999843597412"
+    },
+    {
+        "rev": "workspace",
+        "step": "2",
+        "timestamp": "1630600185321",
+        "val_acc": "0.8921999931335449"
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "mark": {
+        "type": "line"
+    },
+    "encoding": {
+        "x": {
+            "field": "step",
+            "type": "quantitative",
+            "title": "step"
+        },
+        "y": {
+            "field": "val_acc",
+            "type": "quantitative",
+            "title": "val_acc",
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "field": "rev",
+            "type": "nominal"
+        }
+    }
+}
+;
+    vegaEmbed('#plot2', spec);
+</script>
+<div id = "plot3"></div>
+<script type = "text/javascript">
+    var spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {
+        "values": [
+    {
+        "rev": "workspace",
+        "step": "0",
+        "timestamp": "1630600131952",
+        "val_loss": "0.37443751096725464"
+    },
+    {
+        "rev": "workspace",
+        "step": "1",
+        "timestamp": "1630600158282",
+        "val_loss": "0.31476420164108276"
+    },
+    {
+        "rev": "workspace",
+        "step": "2",
+        "timestamp": "1630600185321",
+        "val_loss": "0.2959757447242737"
+    }
+]
+    },
+    "title": "",
+    "width": 300,
+    "height": 300,
+    "mark": {
+        "type": "line"
+    },
+    "encoding": {
+        "x": {
+            "field": "step",
+            "type": "quantitative",
+            "title": "step"
+        },
+        "y": {
+            "field": "val_loss",
+            "type": "quantitative",
+            "title": "val_loss",
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "field": "rev",
+            "type": "nominal"
+        }
+    }
+}
+;
+    vegaEmbed('#plot3', spec);
+</script>
+</body>
+</html>
