@@ -27,9 +27,9 @@ stages:
         train.epochs: 3
     outs:
     - path: dvclive
-      md5: 80fc92079066759101cf5603bd4191e3.dir
-      size: 381
+      md5: 1cb34b47622def1e89376cbe336d0f8a.dir
+      size: 526
       nfiles: 4
     - path: models/model.h5
-      md5: 3ddec501404ce4c728929817d2e90944
+      md5: 6f7d2e552a297217b90efc1ce5073e6f
       size: 8363240
