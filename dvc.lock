@@ -1,0 +1,35 @@
+schema: '2.0'
+stages:
+  extract:
+    cmd: tar -xvzf data/images.tar.gz --directory data
+    deps:
+    - path: data/images.tar.gz
+      md5: 3c8f026df7c3973bcec8e9f945026eb2
+      size: 34312619
+    outs:
+    - path: data/images/
+      md5: 0ebacd64e04c0e4a97d8fa48a4d707e6.dir
+      size: 35401667
+      nfiles: 70000
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/images/
+      md5: 0ebacd64e04c0e4a97d8fa48a4d707e6.dir
+      size: 35401667
+      nfiles: 70000
+    - path: src/train.py
+      md5: 6a15a289a0fa0ec1a917032d3dc8ae8a
+      size: 3682
+    params:
+      params.yaml:
+        model.conv_units: 64
+        train.epochs: 3
+    outs:
+    - path: dvclive
+      md5: 839ab41d69125b12e2763aa4a815b587.dir
+      size: 235
+      nfiles: 4
+    - path: models/model.h5
+      md5: c50a09adf03374e4381cf1b208b47cb9
+      size: 8363240
