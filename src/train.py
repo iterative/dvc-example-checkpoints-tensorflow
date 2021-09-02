@@ -3,6 +3,8 @@ import numpy as np
 from util import load_params, read_labeled_images
 import os
 import json
+from  dvclive.keras import DvcLiveCallback
+
 
 INPUT_DIR = "data/images"
 RESUME_PREVIOUS_MODEL = False
@@ -96,30 +98,31 @@ def main():
     y_train = training_labels
     y_valid = testing_labels
 
-    history = m.fit(
-        x_train,
-        y_train,
-        batch_size=BATCH_SIZE,
-        epochs=params["train"]["epochs"],
-        verbose=1,
-        validation_data=(x_valid, y_valid),
-    )
-
-    with open("logs.csv", "w") as f:
-        f.write(history_to_csv(history))
-
+    epochs = params["train"]["epochs"]
     model_file = os.path.join(OUTPUT_DIR, "model.h5")
-    m.save(model_file)
+    dvclivecb = DvcLiveCallback(model_file=model_file)
+    if epochs == 0:
+        while True:
+            history = m.fit(
+                x_train,
+                y_train,
+                batch_size=BATCH_SIZE,
+                epochs=1,
+                verbose=1,
+                validation_data=(x_valid, y_valid),
+                callbacks=[dvclivecb]
+            )
+    else:
+            history = m.fit(
+                x_train,
+                y_train,
+                batch_size=BATCH_SIZE,
+                epochs=epochs,
+                verbose=1,
+                validation_data=(x_valid, y_valid),
+                callbacks=[dvclivecb]
+            )
 
-    metrics_dict = m.evaluate(
-        testing_images,
-        testing_labels,
-        batch_size=BATCH_SIZE,
-        return_dict=True,
-    )
-
-    with open(METRICS_FILE, "w") as f:
-        f.write(json.dumps(metrics_dict))
 
 
 if __name__ == "__main__":

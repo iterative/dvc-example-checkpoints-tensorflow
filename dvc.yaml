@@ -17,11 +17,7 @@ stages:
     outs:
     - models/model.h5:
         checkpoint: true
-    metrics:
-    - metrics.json:
-        cache: false
-        checkpoint: true
-    plots:
-    - logs.csv:
-        cache: false
-        checkpoint: true
+    live:
+      dvclive:
+        summary: true
+        html: true
